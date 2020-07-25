@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Order Id</label>
+        <input type="number" class="form-control"
+               formControlName="OrderId"
+               #OrderId />
+      </div>
+      <div *ngIf="angForm.controls['OrderId'].invalid && (angForm.controls['OrderId'].dirty || angForm.controls['OrderId'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['OrderId'].errors.required">
+          Order Id is required
+        </div>
+      </div>
+
+      <div class="form-group">
+
+        <button (click) = "getOrderStatus(OrderId.value)" type="submit" class="btn btn-primary"
+                [disabled]="angForm.pristine || angForm.invalid" >
+          Check
+        </button>
+        <br/><br/><br/><p><strong> {{ps.serverGetOrderStatusResponse}} </strong></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+

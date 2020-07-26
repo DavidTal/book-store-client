@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { HttpParams } from "@angular/common/http";
 
-import Book from './Books';
-import {BookData} from './get-book/BookData';
 @Injectable({
   providedIn: 'root'
 })
